@@ -46,7 +46,7 @@ for(steps in 1:totalsteps)
   if(neiborj[newmove]>0 & neiborj[newmove]<(size+1) & neibori[newmove]>0 & neibori[newmove]<(size+1))
   {
     
-    # 动pol
+    # pol
     if(lattice_1[lattice_i,lattice_j]==4 & lattice_1[neibori[newmove],neiborj[newmove]]==5 & twolayer>0.5)
     {
       lattice_2[lattice_i,lattice_j]=5
@@ -99,7 +99,7 @@ for(steps in 1:totalsteps)
     
     
     
-    # 动cho
+    # cho
     if(lattice_cho1[lattice_i,lattice_j]!=5 & lattice_cho1[neibori[newmove],neiborj[newmove]]==5 & twolayer<0.5)
     {
       for(chonumber1 in 1:totalcho)
@@ -115,7 +115,7 @@ for(steps in 1:totalsteps)
       }
       
       
-      #头部
+      #head
       if(numberofcho==1)
       {
         if(choi[chonumber,1]+choi[chonumber,3]==(2*choi[chonumber,2]) | choj[chonumber,1]+choj[chonumber,3]==(2*choj[chonumber,2]))
@@ -177,7 +177,7 @@ for(steps in 1:totalsteps)
       }
       
       
-      #尾部
+      #tail
       if(numberofcho==totallengthofcho)
       {
         if(choi[chonumber,totallengthofcho]+choi[chonumber,(totallengthofcho-2)]==(2*choi[chonumber,(totallengthofcho)]) | choj[chonumber,totallengthofcho]+choj[chonumber,(totallengthofcho-2)]==(2*choj[chonumber,(totallengthofcho-1)]))
@@ -239,7 +239,7 @@ for(steps in 1:totalsteps)
       }
       
       
-      #中部kink
+      #kink
       if(numberofcho>1 & numberofcho<totallengthofcho)
       {
         if(choi[chonumber,numberofcho+1]+choi[chonumber,(numberofcho-1)]!=(2*choi[chonumber,(numberofcho)]) | choj[chonumber,(numberofcho-1)]+choj[chonumber,(numberofcho+1)]!=(2*choj[chonumber,(numberofcho)]))
@@ -306,7 +306,7 @@ for(steps in 1:totalsteps)
         
       }
       
-      # 中部 crankshaft
+      # crankshaft
       
       if(numberofcho>3 & numberofcho<(totallengthofcho-2))
       {
@@ -417,7 +417,7 @@ for(steps in 1:totalsteps)
           
         }
         
-        # j相等（-3 2）
+        # jequal（-3 2）
         if(choj[chonumber,numberofcho-3]==choj[chonumber,numberofcho-2] & choj[chonumber,numberofcho-3]==choj[chonumber,numberofcho+1] & choj[chonumber,numberofcho-3]==choj[chonumber,numberofcho+2])
         {
           jcrankshaft=2*choj[chonumber,numberofcho-3]-lattice_j
@@ -574,7 +574,7 @@ for(steps in 1:totalsteps)
     }
     dev.off()
     
-    #statistic
+    #statistic some problem
     heatmaplattice=heatmaplattice-lattice_1+5
     
     #clusterindex[steps/moviestep]=0
