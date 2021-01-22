@@ -135,7 +135,7 @@ Sys.time()
 
 
 
-  #邻居总能量及channal 每个channal都要计算neibor能
+  #totalenergy, channal energy
   channal=c(0,0,0,0,0,0,0,0)
   for(neiborlattice in 1:8)
   {
